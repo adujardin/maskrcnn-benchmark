@@ -188,7 +188,7 @@ class COCODemo(object):
         transform = T.Compose(
             [
                 T.ToPILImage(),
-                Resize(min_size, max_size),
+                T.Resize(self.min_image_size), #Resize(min_size, max_size),
                 T.ToTensor(),
                 to_bgr_transform,
                 normalize_transform,
